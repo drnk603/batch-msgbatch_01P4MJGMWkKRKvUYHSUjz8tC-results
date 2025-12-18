@@ -16,9 +16,9 @@
     };
 
     const ValidationPatterns = {
-        name: /^[a-zA-ZÀ-ÿs-']{2,50}$/,
-        email: /^[^s@]+@[^s@]+.[^s@]+$/,
-        phone: /^[ds+-()]{10,20}$/,
+        name: /^[a-zA-ZÀ-ÿ\s-']{2,50}$/,
+        email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+        phone: /^[\d\s+\-()]{10,20}$/,
         message: /^.{10,}$/
     };
 
@@ -669,84 +669,3 @@
     window.APP = APP;
 
 })();
-**Дополнения к CSS (добавьте в style.css):**
-
-@keyframes slideInRight {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideOutRight {
-    from {
-        transform: translateX(0);
-        opacity: 1;
-    }
-    to {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-}
-
-@keyframes ripple {
-    to {
-        transform: scale(4);
-        opacity: 0;
-    }
-}
-
-.navbar-collapse {
-    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.btn,
-.c-button,
-a[class*="btn"] {
-    position: relative;
-    overflow: hidden;
-    transition: all 0.25s ease-in-out;
-}
-
-.card,
-.c-card {
-    transition: all 0.3s ease-in-out;
-}
-
-.card:hover,
-.c-card:hover {
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
-}
-
-.nav-link {
-    transition: color 0.25s ease-in-out;
-}
-
-@media (min-width: 768px) {
-    .nav-link::after {
-        transition: transform 0.25s ease-in-out;
-    }
-}
-
-.form-control,
-.form-select {
-    transition: all 0.25s ease-in-out;
-}
-
-.form-control:focus,
-.form-select:focus {
-    transform: scale(1.01);
-}
-
-.invalid-feedback {
-    animation: slideInRight 0.25s ease;
-}
-
-img {
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
